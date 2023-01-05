@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/utils/routes.dart';
-import 'dart:ffi';
 
 // ignore: slash_for_doc_comments
 /**
@@ -22,8 +21,9 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool changeButton = false;
-  String name = "Hey ";
   final _formKey = GlobalKey<FormState>();
+
+  var name = '';
 
   moveToNextHome(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
@@ -35,14 +35,6 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         changeButton = false;
       });
-    }
-  }
-
-  validateMe(String name, String value) {
-    if (name == "username") {
-      if (value.isEmpty) {
-        return "username is empty";
-      }
     }
   }
 
@@ -72,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 44.0,
               ),
-              Text("Welcome \$name",
+              Text("Welcome $name",
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.black,
