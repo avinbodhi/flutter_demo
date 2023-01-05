@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'login_page.dart';
 import 'utils/routes.dart';
+import 'utils/themes.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,9 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         //home: HomePage(),
         themeMode: ThemeMode.light,
-        theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-        ),
+        theme: MyTheme.darkTheme(context),
         darkTheme: ThemeData(
           brightness: Brightness.dark,
         ),
@@ -33,6 +32,8 @@ class MyApp extends StatelessWidget {
           MyRoutes.loginRoute: (context) => HomePage(),
         });
   }
+
+  Type get newMethod => MyTheme;
 
   bringVegitables({required bool bag1, int rupees = 100}) {
     stdout.writeln("this is log");
