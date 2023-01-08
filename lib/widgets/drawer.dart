@@ -50,7 +50,7 @@ class MyDrawer extends StatelessWidget {
                 color: Colors.white,
               ),
               title: Text(
-                "Home",
+                "Mail Me",
                 textScaleFactor: 1.3,
                 style: TextStyle(color: Colors.white),
               ),
