@@ -1,9 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
-import 'dart:ffi';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_catalog/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:flutter_catalog/models/catalog.dart';
@@ -15,6 +16,7 @@ import 'widgets/drawer.dart';
 
 import 'widgets/home_widget/catalog_header.dart';
 import 'widgets/home_widget/catalog_list.dart';
+import 'package:flutter_catalog/utils/routes.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -50,6 +52,11 @@ class _HomePageState extends State<HomePage> {
     // final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+        backgroundColor: MyTheme.darkBluvish,
+        child: Icon(CupertinoIcons.cart),
+      ),
       body: SafeArea(
         child: Container(
           padding: Vx.m32,
@@ -68,4 +75,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
